@@ -4,6 +4,8 @@ import java.util.Random;
 public class RandomTask {
     public static void main(String[] args) {
         Random random = new Random();
+        int target = random.nextInt(0, 100);
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите ваше имя");
         String name = scanner.next();
@@ -12,24 +14,18 @@ public class RandomTask {
 
         int number = scanner.nextInt();
 
-        int[] numbers = new int[number + 1];
-        for(int i = 0; i < numbers.length; i++ ){
-            numbers[i] = random.nextInt(0, 100);
-            int x = numbers[i];
-            while (number != x){
-                if(number < x){
+            while (true){
+                if(number < target){
                     System.out.println("You number is too small. Pleas, try again...");
                     number = scanner.nextInt();
-                }
-                if(number > x){
+                } else if(number > target){
                     System.out.println("You number is too big. Pleas, try again...");
                     number = scanner.nextInt();
-                }
-                if(number == x){
-                    System.out.println("Congratulations, " + name + " !");
+                } else {
+                    System.out.println("Congratulations, " + name + "!");
+                    break;
                 }
             }
-        }
 
     }
 }
