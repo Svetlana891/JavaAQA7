@@ -7,10 +7,10 @@ public class RandomTask {
         int target = random.nextInt(0, 100);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите ваше имя");
+        System.out.println("Enter your name");
         String name = scanner.next();
         System.out.println("Let the game begin!");
-        System.out.println("Введите ваше число");
+        System.out.println("Enter your number");
 
         int number = scanner.nextInt();
 
