@@ -77,7 +77,7 @@ public class Main {
         human15.getName();
         human15.setFamily(family4);
         human15.getSurname();
-        human15.getFamily();
+        human15.getFamily().getPet();
         human15.getIq();
         human15.getYear();
         human15.setIq(3);
@@ -87,24 +87,11 @@ public class Main {
         human15.equals(human14);
         human15.hashCode();
 
+
         System.out.println(pet4);
         pet4.eat();
         pet4.respond();
         pet4.foul();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
