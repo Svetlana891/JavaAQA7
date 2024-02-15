@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Family {
     private Human mother;
     private Human father;
-    private Human[] children;
+    private Human[] children = new Human[0];
     private Pet pet;
 
 
@@ -30,7 +30,7 @@ public class Family {
     }
 
     public void addChild(Human Child){
-        if (getChildren() == null) {
+        if (getChildren().length == 0) {
             setChildren(new Human[1]);
             getChildren()[0] = Child;
         } else {
@@ -41,6 +41,17 @@ public class Family {
             array1[array1.length - 1] = Child;
             setChildren(array1);
         }
+    }
+
+    public int getIdOfHuman(Human myHuman){
+        int idOfHuman = -1;
+        for(int i = 0; i < getChildren().length; i++){
+            if(getChildren()[i].getName().equals(myHuman.getName())) {
+                idOfHuman = i;
+                break;
+            }
+        }
+        return idOfHuman;
     }
 
     public boolean deleteChild(int idOfHuman){

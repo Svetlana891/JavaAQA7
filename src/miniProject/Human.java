@@ -10,24 +10,27 @@ public class Human {
     private int iq;
     private Family family;
 
-    public Human(String name, String surname, int year) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-    }
-
-    public Human(String name, String surname, int year, Family family) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.family = family;
-    }
+//    public Human(String name, String surname, int year) {
+//        this.name = name;
+//        this.surname = surname;
+//        this.year = year;
+//    }
 
     public Human(String name, String surname, int year, int iq) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
+
+    }
+
+    public Human(String name, String surname, int year, int iq, Family family) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.iq = iq;
+        this.family = family;
+
     }
 
     public Human(){}
