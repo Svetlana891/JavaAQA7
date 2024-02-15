@@ -74,6 +74,18 @@ public class Main {
         family4.addChild(human15);
         family4.setPet(pet4);
         System.out.println(human15);
+        human15.getName();
+        human15.setFamily(family4);
+        human15.getSurname();
+        human15.getFamily();
+        human15.getIq();
+        human15.getYear();
+        human15.setIq(3);
+        human15.setYear(2022);
+        human15.setName("Emma");
+        human15.setSurname("King");
+        human15.equals(human14);
+        human15.hashCode();
 
         System.out.println(pet4);
         pet4.eat();
