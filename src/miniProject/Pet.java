@@ -1,6 +1,7 @@
 package miniProject;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Pet {
     private String species;
@@ -29,7 +30,7 @@ public class Pet {
     }
 
     public void respond(){
-        System.out.println("Привіт, хазяїн. Я - " + nickname + " Я скучив!");
+        System.out.println("Привіт, хазяїн. Я - " + nickname + ". Я скучив!");
     }
 
     public void foul(){
@@ -81,4 +82,18 @@ public class Pet {
     public void setHabits(String[] habits) {
         this.habits = habits;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return age == pet.age && trickLevel == pet.trickLevel && Objects.equals(species, pet.species) && Objects.equals(nickname, pet.nickname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(species, nickname, age, trickLevel);
+    }
+
+
 }

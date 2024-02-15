@@ -1,6 +1,7 @@
 package miniProject;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
     private Human mother;
@@ -69,7 +70,6 @@ public class Family {
                 array2[x] = getChildren()[0];
                 x++;
             }
-
         }
         return true;
     }
@@ -125,4 +125,19 @@ public class Family {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        return Objects.equals(mother, family.mother) && Objects.equals(father, family.father) && Objects.equals(pet, family.pet);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mother, father, pet);
+    }
+
+
 }

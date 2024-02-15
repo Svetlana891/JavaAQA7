@@ -1,6 +1,7 @@
 package miniProject;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
 
@@ -10,18 +11,11 @@ public class Human {
     private int iq;
     private Family family;
 
-//    public Human(String name, String surname, int year) {
-//        this.name = name;
-//        this.surname = surname;
-//        this.year = year;
-//    }
-
     public Human(String name, String surname, int year, int iq) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-
     }
 
     public Human(String name, String surname, int year, int iq, Family family) {
@@ -30,18 +24,9 @@ public class Human {
         this.year = year;
         this.iq = iq;
         this.family = family;
-
     }
 
     public Human(){}
-
-//    public void greetPet() {
-//        System.out.println("Привіт, " + pet.getNickname());
-//    }
-//
-//    public void describePet(){
-//        System.out.println("У мене є " + pet.getSpecies()  + " їй " + pet.getAge() + " років, він" + pet.getTrickLevel());
-//    }
 
     @Override
     public String toString() {
@@ -51,9 +36,7 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 '}';
-
     }
-
 
     public String getName() {
         return name;
@@ -96,10 +79,16 @@ public class Human {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return year == human.year && iq == human.iq && Objects.equals(name, human.name) && Objects.equals(surname, human.surname);
+    }
 
-
-
-
-
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, year, iq);
+    }
 }
