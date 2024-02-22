@@ -1,7 +1,6 @@
 package task1;
 
-public class Shop  {
-    // TODO: 22.02.2024 shop implemens interfase ShopI du 
+public class Shop {
     private String nameShop;
     private double discount = 0.9;
 
@@ -10,53 +9,59 @@ public class Shop  {
         this.nameShop = nameShop;
     }
 
-    public double returnCost( Product product, Seller seller, Customer customer) {
+    public double returnCost(Product product, Seller seller, Customer customer) {
         double costSummary = 0;
 
         if (customer.getAgeCustomer() < 18) {
-          if (product.getProductType().equals(ProductType.NOT_ALCOHOL) & seller.getReliability().equals(Reliability.HONEST) & customer.getDiscountCard().equals(DiscountCard.FULL_PRICE)) {
-              System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                      + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                      customer.getAgeCustomer() + " несоответствует. Стоимость вашей покупки равна " + product.getPrice());
+            if (product.getProductType().equals(ProductType.NOT_ALCOHOL) & seller.getReliability().equals(Reliability.HONEST) &
+                    customer.getDiscountCard().equals(DiscountCard.FULL_PRICE)) {
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        " лет - несоответствует. Стоимость вашей покупки равна " + product.getPrice());
                 return product.getPrice();
-            } else if (product.getProductType().equals(ProductType.NOT_ALCOHOL) & seller.getReliability().equals(Reliability.HONEST) & (customer.getDiscountCard().equals(DiscountCard.WITH_SELL))) {
-              System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                      + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                      customer.getAgeCustomer() + " несоответствует. Стоимость вашей покупки равна " + product.getPrice() * discount + " .Вот вам скидка 10%");
-              return product.getPrice() * discount;
-
+            } else if (product.getProductType().equals(ProductType.NOT_ALCOHOL) & seller.getReliability().equals(Reliability.HONEST)
+                    & (customer.getDiscountCard().equals(DiscountCard.WITH_SELL))) {
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        " лет - несоответствует. Стоимость вашей покупки равна " + product.getPrice() * discount +
+                        " .Вот вам скидка 10%");
+                return product.getPrice() * discount;
             } else if (product.getProductType().equals(ProductType.ALCOHOL) & seller.getReliability().equals(Reliability.HONEST)) {
-              System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                      + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                      customer.getAgeCustomer() + " несоответствует. Стоимость вашей покупки равна " + 0 + " .Вот вам скидка 10%");
+                System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ",продаст вам этот товар " + product.getName() +
+                        " ,в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        " несоответствует. Стоимость вашей покупки равна " + 0 + " .Вот вам скидка 10%");
                 return 0;
-
             } else if (customer.getDiscountCard().equals(DiscountCard.FULL_PRICE) & seller.getReliability().equals(Reliability.NOT_HONEST)) {
-              System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                      + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                      customer.getAgeCustomer() + " сойдет. Стоимость вашей покупки равна" + product.getPrice());
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        " лет - сойдет. Стоимость вашей покупки равна" + product.getPrice());
                 return product.getPrice();
-
             } else if (customer.getDiscountCard().equals(DiscountCard.WITH_SELL) & seller.getReliability().equals(Reliability.NOT_HONEST)) {
-              System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                      + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                      customer.getAgeCustomer() + " сойдет. Стоимость вашей покупки равна" + product.getPrice() * discount + "Вот вам скидка 10%");
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        " сойдет. Стоимость вашей покупки равна " + product.getPrice() * discount + ". Вот вам скидка 10%");
                 return product.getPrice() * discount;
 
             }
 
-        }
-        else {
+        } else {
             if (customer.getDiscountCard().equals(DiscountCard.FULL_PRICE)) {
-                System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                        + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                        customer.getAgeCustomer() + " соответствует. Стоимость вашей покупки равна" + product.getPrice());
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        "лет - соответствует. Стоимость вашей покупки равна " + product.getPrice());
                 return product.getPrice();
 
             } else if (customer.getDiscountCard().equals(DiscountCard.WITH_SELL)) {
-                System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() + " нашего магазина " + nameShop
-                        + ",продаст вам этот товар " + product.getName() + " ,в них есть алкогольная продукция, а ваш возратс " +
-                        customer.getAgeCustomer() + " соответствует. Стоимость вашей покупки равна" + product.getPrice() * discount + "Вот вам скидка");
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
+                        " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
+                        ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
+                        "лет - соответствует. Стоимость вашей покупки равна " + product.getPrice() * discount + ". Вот вам скидка");
                 return product.getPrice() * discount;
 
             }
@@ -64,11 +69,6 @@ public class Shop  {
         return costSummary;
 
     }
-
-
-
-
-
 
 
 }
