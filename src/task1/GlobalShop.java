@@ -1,5 +1,7 @@
 package task1;
 
 public interface GlobalShop {
-    public double returnCost();
+    double returnCost(Product product, Seller seller, Customer customer);
+
+
 }
