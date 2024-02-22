@@ -26,25 +26,25 @@ public class Shop {
                         " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
                         ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
                         " лет - несоответствует. Стоимость вашей покупки равна " + product.getPrice() * discount +
-                        " .Вот вам скидка 10%");
+                        ". Вот вам скидка 10%");
                 return product.getPrice() * discount;
             } else if (product.getProductType().equals(ProductType.ALCOHOL) & seller.getReliability().equals(Reliability.HONEST)) {
                 System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() +
                         " нашего магазина " + nameShop + ",продаст вам этот товар " + product.getName() +
                         " ,в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
-                        " несоответствует. Стоимость вашей покупки равна " + 0 + " .Вот вам скидка 10%");
+                        " несоответствует. Стоимость вашей покупки равна " + 0 + ". Вот вам скидка 10%");
                 return 0;
             } else if (customer.getDiscountCard().equals(DiscountCard.FULL_PRICE) & seller.getReliability().equals(Reliability.NOT_HONEST)) {
                 System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
                         " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
                         ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
-                        " лет - сойдет. Стоимость вашей покупки равна" + product.getPrice());
+                        " лет - соответствует. Стоимость вашей покупки равна" + product.getPrice());
                 return product.getPrice();
             } else if (customer.getDiscountCard().equals(DiscountCard.WITH_SELL) & seller.getReliability().equals(Reliability.NOT_HONEST)) {
                 System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
                         " нашего магазина " + nameShop + ", продаст вам этот товар " + product.getName() +
                         ", в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
-                        " сойдет. Стоимость вашей покупки равна " + product.getPrice() * discount + ". Вот вам скидка 10%");
+                        " соответствует. Стоимость вашей покупки равна " + product.getPrice() * discount + ". Вот вам скидка 10%");
                 return product.getPrice() * discount;
 
             }
