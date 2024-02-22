@@ -1,5 +1,5 @@
 package task1;
 
-public enum Trustful {
+public enum Reliability {
     HONEST, NOT_HONEST
 }

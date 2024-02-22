@@ -2,11 +2,11 @@ package task1;
 
 public class Customer {
     private DiscountCard discountCard;
-    private int age;
+    private int ageCustomer;
     private String nameCustomer;
 
-    public int getAge() {
-        return age;
+    public int getAgeCustomer() {
+        return ageCustomer;
     }
 
     public String getNameCustomer() {
@@ -17,8 +17,8 @@ public class Customer {
         this.nameCustomer = nameCustomer;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAgeCustomer(int ageCustomer) {
+        this.ageCustomer = ageCustomer;
     }
 
     public DiscountCard getDiscountCard() {
@@ -31,7 +31,7 @@ public class Customer {
 
     public Customer(DiscountCard discountCard, int age, String nameCustomer) {
         this.discountCard = discountCard;
-        this.age = age;
+        this.ageCustomer = age;
         this.nameCustomer = nameCustomer;
     }
 }

@@ -1,17 +1,31 @@
 package task1;
 
 public class Seller {
-    private Trustful trustful;
+    private Reliability reliability;
+    private String nameSeller;
 
-    public Trustful getTrustful() {
-        return trustful;
+    public String getNameSeller() {
+        return nameSeller;
     }
 
-    public void setTrustful(Trustful trustful) {
-        this.trustful = trustful;
+    public void setNameSeller(String nameSeller) {
+        this.nameSeller = nameSeller;
     }
 
-    public Seller(Trustful trustful) {
-        this.trustful = trustful;
+    public Reliability getReliability() {
+        return reliability;
     }
+
+    public void setReliability(Reliability reliability) {
+        this.reliability = reliability;
+    }
+
+    public Seller(Reliability reliability, String nameSeller) {
+        this.reliability = reliability;
+        this.nameSeller = nameSeller;
+    }
+
+
+
+
 }
