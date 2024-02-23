@@ -1,18 +1,18 @@
 package task3;
 
 public enum Product {
-    APPLE(5), POTATO(3), MILK(20),BEER(15), TOBACCO(30);
-    public int cost;
+    APPLE(5.0), POTATO(3.0), MILK(20.0),BEER(15.0), TOBACCO(30.0);
+    public double cost;
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
-    Product(int cost) {
+    Product(double cost) {
         this.cost = cost;
     }
 }

@@ -2,7 +2,7 @@ package task3;
 
 public class Father {
     private String nameFather;
-    private int money;
+    private double money;
     private Food food;
     private Product goods;
     private int foodCount;
@@ -16,11 +16,11 @@ public class Father {
         this.nameFather = nameFather;
     }
 
-    public int getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -58,7 +58,7 @@ public class Father {
     }
 
 
-    public Father(String nameFather, int money, Food food, Product goods, int foodCount, int productCount) {
+    public Father(String nameFather, double money, Food food, Product goods, int foodCount, int productCount) {
         this.nameFather = nameFather;
         this.money = money;
         this.food = food;
@@ -67,10 +67,10 @@ public class Father {
         this.productCount = productCount;
     }
 
-    public int getPrice() throws NotEnoughMoneyException, WrongProductException, IncorrectCountOfGoodsException{
-        int summ;
-        int summ1 = 0;
-        int summ2 = 0;
+    public double getPrice() throws NotEnoughMoneyException, WrongProductException, IncorrectCountOfGoodsException{
+        double summ;
+        double summ1 = 0;
+        double summ2 = 0;
 
         if(foodCount > 0) {
             if (food.equals(Food.APPLE)) {
@@ -113,13 +113,12 @@ public class Father {
 
 
 
-    }
-
-    public static void main(String[] args) {
-        Father father1 = new Father("Mark", 200, Food.APPLE, Product.BEER, 3, 2);
-        System.out.println(father1.getPrice());
 
     }
+
+
+
+
 
 
 
