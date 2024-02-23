@@ -29,10 +29,10 @@ public class Shop implements GlobalShop {
                         " лет - несоответствует. Стоимость вашей покупки равна " + costSummary +
                         ". Вот вам скидка 10%");
             } else if (product.getProductType().equals(ProductType.ALCOHOL) && seller.getReliability().equals(Reliability.HONEST)) {
-                System.out.println("Уважаемый " + customer.getNameCustomer() + " ,продавец " + seller.getNameSeller() +
+                System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
                         " нашего магазина " + nameShop + ",продаст вам этот товар " + product.getName() +
                         " ,в них есть алкогольная продукция, а ваш возратс " + customer.getAgeCustomer() +
-                        " несоответствует. Стоимость вашей покупки равна " + costSummary + ". Вот вам скидка 10%");
+                        " несоответствует. Стоимость вашей покупки равна " + costSummary);
             } else if (customer.getDiscountCard().equals(DiscountCard.FULL_PRICE) && seller.getReliability().equals(Reliability.NOT_HONEST)) {
                 costSummary = product.getPrice();
                 System.out.println("Уважаемый " + customer.getNameCustomer() + ", продавец " + seller.getNameSeller() +
