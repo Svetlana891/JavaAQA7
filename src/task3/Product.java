@@ -1,7 +1,7 @@
 package task3;
 
 public enum Product {
-    APPLE(40), POTATO(30), MILK(50),BEER(60), TOBACCO(70);
+    APPLE(5), POTATO(3), MILK(20),BEER(15), TOBACCO(30);
     public int cost;
 
     public int getCost() {

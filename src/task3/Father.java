@@ -41,33 +41,82 @@ public class Father {
         this.goods = goods;
     }
 
+    public int getFoodCount() {
+        return foodCount;
+    }
+
+    public void setFoodCount(int foodCount) {
+        this.foodCount = foodCount;
+    }
+
+    public int getProductCount() {
+        return productCount;
+    }
+
+    public void setProductCount(int productCount) {
+        this.productCount = productCount;
+    }
 
 
-    public int getPrice() {
-        int summ = 0;
+    public Father(String nameFather, int money, Food food, Product goods, int foodCount, int productCount) {
+        this.nameFather = nameFather;
+        this.money = money;
+        this.food = food;
+        this.goods = goods;
+        this.foodCount = foodCount;
+        this.productCount = productCount;
+    }
+
+    public int getPrice() throws NotEnoughMoneyException, WrongProductException, IncorrectCountOfGoodsException{
+        int summ;
         int summ1 = 0;
-        int summ4 = 0;
+        int summ2 = 0;
 
-        if (food.equals(Food.APPLE) || goods.equals(Product.APPLE)) {
-            summ1 = money - (Food.APPLE.getCost() * count);
-        } else if (food.equals(Food.POTATO) || goods.equals(Product.POTATO)) {
-            int summ2 = money - Food.POTATO.getCost() * count;
-        } else if (food.equals(Food.MILK) || goods.equals(Product.MILK)) {
-            int summ3 = money - Food.MILK.getCost() * count;
-        } else if (food.equals(Food.BEER) || goods.equals(Product.BEER)) {
-            summ4 = money - Food.BEER.getCost() * count;
-        } else if (food.equals(Food.TOBACCO) || goods.equals(Product.TOBACCO)) {
-            int summ5 = money - Food.TOBACCO.getCost() * count;
+        if(foodCount > 0) {
+            if (food.equals(Food.APPLE)) {
+                summ1 = money - Food.APPLE.getCost() * foodCount;
+            } else if (food.equals(Food.POTATO)) {
+                summ1 = money - Food.POTATO.getCost() * foodCount;
+            } else if (food.equals(Food.MILK)) {
+                summ1 = money - Food.MILK.getCost() * foodCount;
+            } else if (food.equals(Food.BEER)) {
+                summ1 = money - Food.BEER.getCost() * foodCount;
+            } else if (food.equals(Food.TOBACCO)) {
+                summ1 = money - Food.TOBACCO.getCost() * foodCount;
+            }
         }
 
-        summ = summ1 + summ4;
+        if(productCount > 0) {
+            if (goods.equals(Product.APPLE)) {
+                summ2 = money - Food.APPLE.getCost() * productCount;
+            } else if (goods.equals(Product.POTATO)) {
+                summ2 = money - Food.POTATO.getCost() * productCount;
+            } else if (goods.equals(Product.MILK)) {
+                summ2 = money - Food.MILK.getCost() * productCount;
+            } else if (goods.equals(Product.BEER)) {
+                summ2 = money - Food.BEER.getCost() * productCount;
+            } else if (goods.equals(Product.TOBACCO)) {
+                summ2 = money - Food.TOBACCO.getCost() * productCount;
+            }
+        }
 
-        return summ;
+        summ = summ1 + summ2;
+        if(summ > money){
+            throw new NotEnoughMoneyException();
+        } else if (food.equals(Food.BEER) || goods.equals(Product.BEER)) {
+            throw new WrongProductException();
+        } else if (foodCount % 3 != 0) {
+            throw new IncorrectCountOfGoodsException();
+        } else {
+            return summ;
+        }
+
+
 
     }
 
     public static void main(String[] args) {
-        Father father1 = new Father("Mark", 200, Food.APPLE, Product.BEER);
+        Father father1 = new Father("Mark", 200, Food.APPLE, Product.BEER, 3, 2);
         System.out.println(father1.getPrice());
 
     }
