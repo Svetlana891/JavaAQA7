@@ -1,60 +1,53 @@
 package task3;
 
 public class Shop {
+    private int type1Count;
+    private int type2Count;
 
 
+    public double buyProducts(Father father, int type1Count, int type2Count, ProductType1 Type1, ProductType2 Type2)
+            throws NotEnoughMoneyException, WrongProductException, IncorrectCountOfGoodsException {
 
-
-    public double buyProducts(Father father, Product[] goods ) throws NotEnoughMoneyException, WrongProductException, IncorrectCountOfGoodsException {
         double summ;
         double summ1 = 0;
-//        double summ2 = 0;
+        double summ2 = 0;
 
-        Product[] goods = new Product[2];
-        for (int i = 0, i < 2, i++){
-            goods[i] = product[i].type;
-        }
-
-
-
-        // TODO: 23.02.2024 count of productType < 2
-
-
-        if (foodCount > 0) {
-            if (food.equals(ProductType.APPLE)) {
-                summ1 = father.getMoney() - ProductType.APPLE.getCost() * foodCount;
-            } else if (food.equals(ProductType.POTATO)) {
-                summ1 = father.getMoney() - ProductType.POTATO.getCost() * foodCount;
-            } else if (food.equals(ProductType.MILK)) {
-                summ1 = father.getMoney() - ProductType.MILK.getCost() * foodCount;
-            } else if (food.equals(ProductType.BEER)) {
-                summ1 = father.getMoney() - ProductType.BEER.getCost() * foodCount;
-            } else if (food.equals(ProductType.TOBACCO)) {
-                summ1 = father.getMoney() - ProductType.TOBACCO.getCost() * foodCount;
+        if (type1Count > 0) {
+            if (Type1.equals(ProductType1.APPLE)) {
+                summ1 = father.getMoney() - ProductType1.APPLE.getCost() * type1Count;
+            } else if (Type1.equals(ProductType1.POTATO)) {
+                summ1 = father.getMoney() - ProductType1.POTATO.getCost() * type1Count;
+            } else if (Type1.equals(ProductType1.MILK)) {
+                summ1 = father.getMoney() - ProductType1.MILK.getCost() * type1Count;
+            } else if (Type1.equals(ProductType1.BEER)) {
+                summ1 = father.getMoney() - ProductType1.BEER.getCost() * type1Count;
+            } else if (Type1.equals(ProductType1.TOBACCO)) {
+                summ1 = father.getMoney() - ProductType1.TOBACCO.getCost() * type1Count;
             }
         }
 
-//        if (productCount > 0) {
-//            if (product.equals(Product.APPLE)) {
-//                summ2 = father.getMoney() - ProductType.APPLE.getCost() * productCount;
-//            } else if (product.equals(Product.POTATO)) {
-//                summ2 = father.getMoney() - ProductType.POTATO.getCost() * productCount;
-//            } else if (product.equals(Product.MILK)) {
-//                summ2 = father.getMoney() - ProductType.MILK.getCost() * productCount;
-//            } else if (product.equals(Product.BEER)) {
-//                summ2 = father.getMoney() - ProductType.BEER.getCost() * productCount;
-//            } else if (product.equals(Product.TOBACCO)) {
-//                summ2 = father.getMoney() - ProductType.TOBACCO.getCost() * productCount;
-//            }
-//        }
+        if (type2Count > 0) {
+            if (Type2.equals(ProductType2.APPLE)) {
+                summ2 = father.getMoney() - ProductType2.APPLE.getCost() * type2Count;
+            } else if (Type2.equals(ProductType2.POTATO)) {
+                summ2 = father.getMoney() - ProductType2.POTATO.getCost() * type2Count;
+            } else if (Type2.equals(ProductType2.MILK)) {
+                summ2 = father.getMoney() - ProductType2.MILK.getCost() * type2Count;
+            } else if (Type2.equals(ProductType2.BEER)) {
+                summ2 = father.getMoney() - ProductType2.BEER.getCost() * type2Count;
+            } else if (Type2.equals(ProductType2.TOBACCO)) {
+                summ2 = father.getMoney() - ProductType2.TOBACCO.getCost() * type2Count;
+            }
+        }
+
         System.out.println("Уважаемый ...");
 
         summ = summ1 + summ2;
         if (summ > father.getMoney()) {
             throw new NotEnoughMoneyException();
-        } else if (food.equals(ProductType.BEER) || product.equals(Product.BEER)) {
+        } else if (Type1.equals(ProductType1.BEER) || Type2.equals(ProductType2.BEER)) {
             throw new WrongProductException();
-        } else if (foodCount % 3 != 0) {
+        } else if (type1Count % 3 != 0 || type2Count % 3 != 0) {
             throw new IncorrectCountOfGoodsException();
         } else {
             return summ;
