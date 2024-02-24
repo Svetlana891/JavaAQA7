@@ -7,7 +7,7 @@ public class Main1 {
 
         double summ;
         try {
-            summ = father1.getPrice();
+            summ = father1.buyProducts(3,4, ProductType1.APPLE, ProductType2.POTATO);
         }catch (NotEnoughMoneyException e){
             System.out.println(e.getMessage());
         }catch (WrongProductException e){
