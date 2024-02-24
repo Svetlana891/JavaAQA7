@@ -1,6 +1,6 @@
 package task3;
 
-public enum Food {
+public enum ProductType {
 
    APPLE(5.0), POTATO(3.0), MILK(20.0),BEER(15.0), TOBACCO(30.0);
 
@@ -16,7 +16,7 @@ public enum Food {
    }
 
 
-   Food(double cost) {
+   ProductType(double cost) {
       this.cost = cost;
    }
 }

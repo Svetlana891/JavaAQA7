@@ -1,18 +1,37 @@
 package task3;
 
-public enum Product {
-    APPLE(5.0), POTATO(3.0), MILK(20.0),BEER(15.0), TOBACCO(30.0);
-    public double cost;
+public class Product {
+    private ProductType type;
+    private double price;
+    private int amount;
 
-    public double getCost() {
-        return cost;
+    public Product(ProductType type, double price, int amount) {
+        this.type = type;
+        this.price = price;
+        this.amount = amount;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public ProductType getType() {
+        return type;
     }
 
-    Product(double cost) {
-        this.cost = cost;
+    public void setType(ProductType type) {
+        this.type = type;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
